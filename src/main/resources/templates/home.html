@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th='http://www.thymeleaf.org' xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Blog Lintech</title>
+	<meta name="author" content="Joao Claudio">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+	<div th:replace="fragments/header-footer :: header">...</div>	
+
+	<section class="home-section d-flex flex-column justify-content-center align-items-center ">
+		<h1 class="title">Blog de Notícias Tech</h1>
+		<div class="btn-morePosts">
+			<button class="btn btn-outline-light btn-lg mb-3 "><a class="btn-cta" style="text-decoration: none;" th:href="@{/blog-noticias}">Ver todos os Posts</a> </button>
+		</div>
+
+	</section>
+	
+	<div th:replace="fragments/header-footer :: footer">...</div>
+
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

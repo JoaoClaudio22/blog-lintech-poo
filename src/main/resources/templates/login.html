@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Blog Lintech</title>
+	<meta name="author" content="Joao Claudio">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+
+	<section style="background-color:#f3f0f8; height: 100vh;">
+		<h1 class="text-center" style="padding-top:1.5rem;">Área de Login</h1>
+		<div class="container ">
+			<form class="login-form" th:action="@{/login}" method="POST">
+		
+				<div class="mb-3">
+					<label  class="form-label">Nome de usuário:</label>
+					<input type="text" class="form-control" name = "username">
+				</div>
+				
+				<div class="mb-3">
+					<label class="form-label">Senha:</label>
+					<input type="password" class="form-control" name = "password">
+				</div>
+				
+			
+				<button type="submit" class="btn btn-secondary btn-login">Entrar</button>
+				<hr/>
+				<div class="form-text new-user">Novo usuário? Faça seu cadastro!</div>
+				<a class="btn btn-success btn-cadastro" th:href="@{/cadastro}">Fazer Cadastro</a>
+				
+				<a th:href="@{/}">
+					<img src="img/back-arrow.png">
+				</a>
+			</form>
+
+
+		</div>
+
+
+	</section>
+
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

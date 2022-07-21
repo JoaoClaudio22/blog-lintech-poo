@@ -1,0 +1,41 @@
+<div th:fragment="header">
+	<header >
+		<div class="navbar navbar-expand-lg navbar-dark" style="background-color:#0277bd">
+			<a class="navbar-brand" th:href="@{/}">
+				<img src="img/logoOk.png">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div  id="navMobile" class="navbar-collapse collapse justify-content-end">
+
+
+				<a th:href="@{/}" class="nav-item nav-link">Home</a>
+				<a class="nav-item nav-link" th:href="@{/blog-noticias}">Pesquisar Post</a>
+				<a sec:authorize="hasRole('EDITOR')" class="nav-item nav-link" th:href="@{/adicionar-noticia}">Fazer novo post</a>
+
+				<a sec:authorize="!isAuthenticated()" th:href="@{/login}" class="nav-item nav-link">Login/Cadastrar</a>
+				
+				<form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">
+				<label style="font-weight:700;">Olá <span sec:authentication="name">Usuário</span></label>
+					<button class="btn btn-danger" type="submit">Sair
+					</button>
+				</form>
+			</div>
+
+
+			</nav>
+
+	</header>
+</div>
+
+
+<div th:fragment="footer">
+	<footer>
+		<div class="rodape d-flex flex-column">
+			<span>Todos os Direitos Reservados - 2022 &copy;João Claudio</span>
+			<span><a href="https://github.com/JoaoClaudio22" target="_blank">Github</a></span>
+		</div>
+	</footer>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Blog Lintech</title>
+	<meta name="author" content="Joao Claudio">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+	<div th:replace="fragments/header-footer :: header">...</div>
+
+	<section style="background-color: #f3f0f8;">
+
+		<div class="container ">
+			<h1 class="text-center" style="padding-top:1.5rem;">Cadastro de notícias</h1>
+			
+			<form method="POST" th:action="@{/adicionar-noticia}" th:object="${noticia}"  >
+				<div class="form-group mb-3">
+					<label class="form-label">Título da Notícia:</label>
+					<input type="text" class="form-control" placeholder="Escreva seu título aqui..." th:field="*{tituloNoticia}" >
+				</div>
+				<div class="form-floating">
+					<label for="">Conteúdo:</label>
+					<textarea class="form-control conteudo-noticia" placeholder="Faça seu post aqui..."
+						id="" th:field="*{conteudo}"></textarea>
+				</div>
+				
+				<h4 th:object=${autor}>Escrito por: <span th:text=${autor}>teste</span></h4>
+
+<!--	futuro		<div class="mb-3">-->
+<!--					<label for="formFile" class="form-label">Imagem da notícia</label>-->
+<!--					<input class="form-control" type="file" id="" disabled>-->
+<!--				</div>-->
+
+				<button type="submit" class="btn btn-primary btn-publicar">Publicar</button>
+			</form>
+		</div>
+
+
+	</section>
+
+	<div th:replace="fragments/header-footer :: footer">...</div>
+
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
